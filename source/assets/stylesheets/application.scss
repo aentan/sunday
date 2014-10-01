@@ -118,6 +118,10 @@ body {
   }
 }
 
+.clear-ray {
+  clear: both;
+}
+
 @for $index from 1 through 8 {
 	[class^="ray-"]:nth-child(#{$index}n-#{$index}) {
     @include random-persian-blue-shade();
@@ -125,25 +129,27 @@ body {
 }
 
 @media (min-width: $screen-sm-min) {
+  @for $index from 1 through 4 {
+  	.ray-#{$index} {
+  		width: $index * 50%;
+  	}
+  }
+  @for $index from 0 through 3 {
+    .ray-offset-#{$index} {
+      margin-right: (3 - $index) * 50%;
+    }
+  }
 }
 
 @media (min-width: $screen-md-min) {
-
   @for $index from 1 through 4 {
-  	.ray-#{$index} {
+  	.ray-md-#{$index} {
   		width: $index * 25%;
   	}
   }
-  
   @for $index from 0 through 3 {
-    .ray-offset-#{$index} {
+    .ray-md-offset-#{$index} {
       margin-right: (3 - $index) * 25%;
     }
-    
   }
-  
-  .clear-ray {
-    clear: both;
-  }
-  
 }
