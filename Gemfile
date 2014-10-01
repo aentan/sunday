@@ -35,3 +35,6 @@ gem "twitter_cldr"
 
 # For HTML parsing
 gem "nokogiri"
+
+# SVG fallback
+gem 'middleman-svg-fallback'
