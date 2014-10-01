@@ -1,24 +1,30 @@
----
-pageable: true
-per_page: 10
----
-<% if paginate && num_pages > 1 %>
-  <p>Page <%= page_number %> of <%= num_pages %></p>
+<aside>
+  <%= link_to data.settings.name, '/', class: 'logo' %>
+  <nav>
+    <ul>
+      <li><a href="#">Work</a></li><!--
+      --><li><a href="#">Services</a></li><!--
+      --><li><a href="#">People</a></li><!--
+      --><li><a href="#">&amp;Sunday</a></li><!--
+      --><li><a href="#">Labs</a></li><!--
+      --><li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+</aside>
 
-  <% if prev_page %>
-    <p><%= link_to 'Previous page', prev_page %></p>
-  <% end %>
-<% end %>
-
-<% page_articles.each_with_index do |article, i| %>
-  <h2><%= link_to article.title, article %> <span><%= article.date.strftime('%b %e') %></span></h2>
-  <!-- use article.summary(250) if you have Nokogiri available to show just
-       the first 250 characters -->
-  <%= article.body %>
-<% end %>
-
-<% if paginate %>
-  <% if next_page %>
-    <p><%= link_to 'Next page', next_page %></p>
-  <% end %>
-<% end %>
+<div id="main" role="main">
+  <a href="#" class="ray-4"></a>
+  <a href="#" class="ray-1 ray-offset-1 clear-ray"></a>
+  <a href="#" class="ray-1 ray-offset-2 clear-ray"></a>
+  <a href="#" class="ray-1 ray-offset-0 clear-ray"></a>
+  <a href="#" class="ray-1 ray-offset-3"></a>
+  <a href="#" class="ray-2 ray-offset-2 clear-ray"></a>
+  <a href="#" class="ray-1 ray-offset-0 clear-ray"></a>
+  <a href="#" class="ray-1 ray-offset-2"></a>
+  <a href="#" class="ray-1 ray-offset-1 clear-ray"></a>
+  <a href="#" class="ray-1 ray-offset-1"></a>
+  <a href="#" class="ray-1 ray-offset-3"></a>
+  <a href="#" class="ray-1 ray-offset-2 clear-ray"></a>
+  <a href="#" class="ray-1 ray-offset-1 clear-ray"></a>
+  <a href="#" class="ray-2 ray-offset-3 clear-ray"></a>
+</div>

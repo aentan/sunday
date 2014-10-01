@@ -27,3 +27,14 @@
   -moz-appearance:    $appearance;
   appearance:         $appearance;
 }
+
+@mixin proportionate-height($ratio: 61.8%) {
+  content: "";
+  display: block;
+  height: 0;
+  padding-bottom: $ratio;
+}
+
+@mixin random-persian-blue-shade() {
+  background-color: lighten($brand-primary, 56 - (random(5) * 1.2));
+}

@@ -157,3 +157,13 @@ $container-desktop:           ((940px + $grid-gutter-width));
 
 // Large screen / wide desktop
 $container-lg-desktop:        ((1140px + $grid-gutter-width));
+
+
+//== Navbar
+//
+//##
+
+// Basics of a navbar
+$navbar-height:                    64px !default;
+$navbar-default-bg:                #fff !default;
+$navbar-default-border:            darken($navbar-default-bg, 6.5%) !default;
