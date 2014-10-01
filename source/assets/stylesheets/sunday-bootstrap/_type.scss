@@ -1,0 +1,131 @@
+//
+// Typography
+// --------------------------------------------------
+
+// Not too tight
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  line-height: $headings-line-height * 1.091;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+  margin-top: $line-height-computed;
+  margin-bottom: $line-height-computed;
+}
+
+p, ol, ul {
+  margin: 0;
+  letter-spacing: $text-tracking;
+  -webkit-font-smoothing: antialiased;
+  a {
+    &:first-child img {
+      margin-bottom: 0;
+    }
+    & + a img {
+      margin: $line-height-computed 0;
+    }
+    &:last-child img {
+      margin-bottom: $line-height-computed*1.5;
+    }
+  }
+  img {
+    margin: ($line-height-computed*.75) 0;
+  }
+}
+
+@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+  p img {
+    margin: $line-height-computed auto;
+  }
+}
+@media (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+  p img {
+    margin: $line-height-computed*1.5 auto;
+  }
+}
+@media (min-width: $screen-lg-min) {
+  p img {
+    margin: $line-height-computed*1.5 auto;
+  }
+}
+
+p + p {
+  text-indent: #{($line-height-base)}em;
+  margin: 0;
+}
+p + h1,
+p + h2,
+p + h3,
+p + h4,
+p + h5,
+p + h6,
+p + table {
+  margin-top: $line-height-computed * .75;
+}
+
+#article iframe[src^="//www.youtube.com"],
+#article iframe[src^="//player.vimeo.com"] {
+  margin-bottom: $line-height-computed;
+}
+
+// Avoid bold
+strong, b {
+  font-weight: $headings-font-weight;
+}
+
+// Lead
+.lead {
+  margin-bottom: $line-height-computed;
+  font-size: floor(($font-size-base * 1.091));
+  font-weight: $text-font-weight;
+  line-height: 1.25;
+  @media (min-width: $screen-sm-min) {
+    font-size: ($font-size-base * 1.455);
+  }
+}
+
+// Blockquotes
+blockquote {
+  border: 0;
+  font-size: inherit;
+  margin: #{($line-height-base)}em #{($line-height-base/2)}em;
+  padding: 0 $line-height-computed/2;
+  position: relative;
+  p {
+    font-weight: $text-font-weight;
+    &:before {
+      content: '';
+      border-left: 2px solid $text-color;
+      border-top: 2px solid $text-color;
+      height: $line-height-computed/2;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: $line-height-computed/4;
+    }
+  }
+  // Float right with text-align: right
+  &.pull-right {
+    padding-right: 16px;
+    border: 0;
+  }
+}
+
+// Description Lists
+dl {
+  margin-bottom: $line-height-computed;
+}
+dt,
+dd {
+  line-height: $line-height-base;
+}
+dt {
+  font-weight: $headings-font-weight;
+}
+dd {
+  color: $text-muted;
+  margin-left: 0; // Undo browser default
+  margin-bottom: 4px;
+}

@@ -1,0 +1,279 @@
+// Custom variables first
+@import "sunday-bootstrap/variables";
+
+// Then Bootstrap
+@import "bootstrap/bootstrap";
+
+// Core mixins
+@import "sunday-bootstrap/mixins";
+
+// Core CSS
+@import "sunday-bootstrap/scaffolding";
+@import "sunday-bootstrap/type";
+
+// Utility classes
+@import "sunday-bootstrap/utilities";
+
+body {
+  overflow-x: hidden;
+  position: relative;
+}
+
+
+// Transitions
+// --------------------------------------------------
+
+#main {
+  background-color: white;
+  min-height: 100%;
+  position: relative;
+}
+
+#clone {
+  background-color: white;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+
+// Articles
+// --------------------------------------------------
+
+a.index {
+}
+
+#articles,
+#article {
+  @extend .col-sm-10;
+  @extend .col-sm-offset-1;
+  @extend .col-md-8;
+  @extend .col-md-offset-1;
+  @extend .col-lg-7;
+  @extend .col-lg-offset-1;
+  @include clearfix();
+}
+
+#articles article,
+#article {
+  padding-top: 80px;
+  > h2 a {
+    color: $text-color;
+  }
+  @media (min-width: $screen-sm-min) {
+    & {
+      padding-top: 128px;
+    }
+  }
+  @media (min-width: $screen-md-min) {
+    & {
+      padding-top: 240px;
+    }
+  }
+  @media (min-width: $screen-lg-min) {
+    & {
+      padding-top: 320px;
+    }
+  }
+}
+
+#articles-list,
+#index {
+  box-sizing: content-box;
+  height: 100%;
+  margin-top: 96px;
+  padding-right: (100 / 12) * 1%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  @extend .col-xs-6;
+  @extend .col-sm-4;
+  @extend .col-md-3;
+  @extend .col-lg-2;
+  @extend .col-lg-offset-1;
+  ul {
+    @extend .list-unstyled;
+    line-height: 1.231;
+    li {
+      @include transition(margin-left 500ms ease);
+      margin-bottom: #{($line-height-base/2)}em;
+      &.active {
+        margin-left: -#{($line-height-base/2)}em;
+      }
+      a {
+        display: block;
+        color: $text-color;
+      }
+    }
+  }
+}
+
+.paginate {
+  font-size: $font-size-small;
+  margin-bottom: 48px;
+  margin-top: 32px;
+}
+
+#articles .paginate {
+  text-align: center;
+}
+
+
+// Off-canvas
+// --------------------------------------------------
+
+[data-toggle="main-shift"] {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  z-index: $zindex-navbar;
+  @include transition(all 300ms ease);
+  &.back {
+    @include rotate(180deg);
+    @include transform-origin(50% 50%);
+    .icon-bar {
+      &:nth-child(1) {
+        @include rotate(-45deg);
+        @include transform-origin(10px 4px);
+        width: 12px;
+      }
+      &:nth-child(3) {
+        @include rotate(45deg);
+        @include transform-origin(10px -2px);
+        width: 12px;
+      }
+    }
+  }
+  .icon-bar {
+    @include transition(all 300ms ease);
+    border-radius: 1px;
+    display: block;
+    width: 24px;
+    height: 2px;
+    margin-bottom: 6px;
+    background-color: $link-color;
+    &:last-child {
+      margin-bottom: 0;
+      width: 20px;
+    }
+  }
+}
+
+#main {
+  position: relative;
+  right: 0;
+  @include transition(all 500ms ease);
+  &.shift {
+    #articles-list,
+    #index {
+      right: 0;
+    }
+  }
+}
+
+#articles-list,
+#index {
+  @include transition(all 500ms ease);
+}
+
+@media screen and (max-width: $screen-md-max) {
+  #main #articles-list,
+  #main #index {
+    right: -42%;
+  }
+  #main.shift {
+    right: 42%;
+    [data-toggle="main-shift"] {
+      right: 42%;
+    }
+  }
+}
+@media screen and (max-width: $screen-sm-max) {
+  #main #articles-list,
+  #main #index {
+    right: -50%;
+  }
+  #main.shift {
+    right: 50%;
+    [data-toggle="main-shift"] {
+      right: 50%;
+    }
+  }
+}
+@media screen and (max-width: $screen-xs-max) {
+  #main #articles-list,
+  #main #index {
+    right: -67%;
+  }
+  #main.shift {
+    right: 67%;
+    [data-toggle="main-shift"] {
+      right: 67%;
+    }
+  }
+}
+
+
+// Images
+.img-zoom {
+  display: block;
+  text-align: center;
+  img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.fluidbox {
+        outline: none;
+}
+#fluidbox-overlay {
+  cursor: pointer;
+  cursor: -webkit-zoom-out;
+  cursor: -moz-zoom-out;
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 500;
+}
+.fluidbox-wrap {
+  background-position: center center;
+  background-size: cover;
+  margin: 0 auto;
+  position: relative;
+  z-index: 400;
+  transition: all .32s ease-in-out;
+}
+.fluidbox-opened .fluidbox-wrap {
+  z-index: 600;
+}
+.fluidbox-ghost {
+  background-size: cover;
+  background-position: center center;
+  position: absolute;
+  transition: all .32s ease-in-out;
+}
+
+
+// Videos
+
+iframe[src*='//player.vimeo.com'],
+iframe[src*='//www.youtube.com'],
+iframe[src*='//embed.ted.com'] {
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+
+// Comments
+#comments {
+  margin-bottom: 64px;
+  padding-top: 48px;
+  min-height: 108px;
+  > .btn {
+    display: block;
+    margin: 0 auto;
+  }
+}

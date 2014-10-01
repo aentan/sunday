@@ -1,0 +1,42 @@
+//
+// Scaffolding
+// --------------------------------------------------
+
+// Be explicit
+body {
+  font-weight: $text-font-weight;
+  font-size: 16px;
+  @media (min-width: $screen-sm-min) {
+    & {
+      font-size: 20px;
+    }
+  }
+  @media (min-width: $screen-md-min) {
+    & {
+      font-size: $font-size-base;
+    }
+  }
+}
+
+// Small rounded corners for small images
+.img-rounded-sm {
+  border-radius: $border-radius-small;
+}
+
+// Horizontal rules
+
+hr {
+  border: 0;
+  margin-top:    #{$line-height-base}em;
+  margin-bottom: #{$line-height-base}em;
+  text-align: center;
+  &:after {
+    content: ". . .";
+    font-weight: 100;
+    font-size: 1.5em;
+    display: inline-block;
+    position: relative;
+    top: -1em;
+    padding: 0 0.25em;
+  }
+}

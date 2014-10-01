@@ -1,0 +1,11 @@
+//
+// Utility classes
+// --------------------------------------------------
+
+// Percentage width helper classes (w-1p to w100p where p = %)
+@for $index from 0 through 100 {
+	.w-#{index}p {
+		// your resulting css
+		width: #{$index}% !important;
+	}
+}
