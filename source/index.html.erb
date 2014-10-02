@@ -1,5 +1,11 @@
 <aside>
-  <%= link_to data.settings.name, '/', class: 'logo' %>
+  <div class="logo-bar">
+    <%= link_to data.settings.name, '/', class: 'logo' %>
+    <button class="menu-toggle">
+      <span class="icon-bar bar-top"></span>
+      <span class="icon-bar bar-bottom"></span>
+    </button>
+  </div>
   <nav>
     <ul>
       <li><a href="#">Work</a></li><!--

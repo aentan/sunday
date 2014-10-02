@@ -164,6 +164,5 @@ $container-lg-desktop:        ((1140px + $grid-gutter-width));
 //##
 
 // Basics of a navbar
-$navbar-height:                    64px !default;
-$navbar-default-bg:                #fff !default;
-$navbar-default-border:            darken($navbar-default-bg, 6.5%) !default;
+$navbar-height:                    56px;
+$navbar-default-bg:                #fff;

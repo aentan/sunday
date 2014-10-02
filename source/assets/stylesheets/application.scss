@@ -29,45 +29,52 @@ body {
     z-index: $zindex-navbar;
     width: 100%;
     height: $navbar-height - 8;
+    background-color: $navbar-default-bg;
     @media (min-width: $screen-sm-min) {
       top: 0;
       bottom: none;
       float: left;
       width: 20%;
     }
-    .logo {
-      @extend .text-hide;
-      display: block;
-      position: absolute;
+    .logo-bar {
+      background-color: $navbar-default-bg;
+      position: relative;
       z-index: $zindex-navbar;
-      left: 0;
-      top: 0;
-      width: $navbar-height - 8;
-      background: $navbar-default-bg image-url('corona.svg') no-repeat;
-      background-position: 50% 50%;
-      background-size: 32px 32px;
-      &:before {
-        @include proportionate-height(100%);
-      }
-      @media (min-width: $screen-sm-min) {
-        position: static;
-        float: left;
-        width: 100%;
-        background-size: 64px 64px;
+      .logo {
+        @extend .text-hide;
+        display: block;
+        position: relative;
+        margin: 0 auto;
+        width: $navbar-height - 8;
+        background: image-url('corona.svg') no-repeat;
+        background-position: 50% 50%;
+        background-size: 32px 32px;
+        &:before {
+          @include proportionate-height(100%);
+        }
+        @media (min-width: $screen-sm-min) {
+          position: static;
+          float: left;
+          width: 100%;
+          background-size: 64px 64px;
+        }
       }
     }
     nav {
+      @include transition(top .3s .3s ease);
       float: left;
-      padding-left: 56px;
       width: 100%;
-      background-color: $brand-primary;
+      position: absolute;
+      top: 0;
+      background-color: $navbar-default-bg;
+      box-shadow: inset 0 -9px 0 0 lighten($brand-primary, 50%);
       overflow: auto;
       -webkit-overflow-scrolling: touch;
       @media (min-width: $screen-sm-min) {
-        padding-left: 0;
         float: none;
+        position: static;
         text-align: center;
-        background-color: transparent;
+        box-shadow: none;
       }
       ul {
         float: left;
@@ -84,11 +91,9 @@ body {
           a {
             display: block;
             line-height: 1.5;
-            padding: 16px 20px 24px;
-            color: white;
+            padding: 12px 20px 20px;
             @media (min-width: $screen-sm-min) {
               padding: 0;
-              color: $brand-primary;
             }
           }
         }
@@ -104,6 +109,61 @@ body {
     }
   }
 }
+
+
+.menu-toggle {
+  @extend .text-hide;
+  padding: 18px 16px;
+  position: absolute;
+  z-index: $zindex-navbar;
+  left: 0;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  @media (min-width: $screen-sm-min) {
+    display: none;
+  }
+  > .icon-bar {
+    border-radius: 1px;
+    display: block;
+    width: 16px;
+    height: 2px;
+    position: absolute;
+    background-color: $brand-primary;
+    @include transform-origin(50% 50%);
+    transition: top .2s .3s ease, -webkit-transform .2s ease;
+    transition: top .2s .3s ease, transform .2s ease;
+    &.bar-top {
+      top: 19px;
+    }
+    &.bar-bottom {
+      top: 27px;
+    }
+  }
+}
+
+.menu-open {
+  > aside nav {
+    top: -48px;
+  }
+  .menu-toggle {
+    > .icon-bar {
+      transition: top .2s ease, -webkit-transform .2s .3s ease;
+      transition: top .2s ease, transform .2s .3s ease;
+      top: 23px;
+      &.bar-top {
+        -webkit-transform: rotate3d(0,0,1,45deg);
+        transform: rotate3d(0,0,1,45deg);
+      }
+      &.bar-bottom {
+        -webkit-transform: rotate3d(0,0,1,-45deg);
+        transform: rotate3d(0,0,1,-45deg);
+      }
+    }
+    
+  }
+}
+
 
 [class^="ray-"] {
   float: left;
