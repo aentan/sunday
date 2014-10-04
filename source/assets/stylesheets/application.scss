@@ -50,7 +50,8 @@ body {
         background-position: 50% 50%;
         background-size: 32px 32px;
         &:before {
-          @include proportionate-height(100%);
+          @include proportionate-height();
+          @include ratio-to-height(1, 1.618);
         }
         @media (min-width: $screen-sm-min) {
           position: static;
@@ -66,6 +67,8 @@ body {
       width: 100%;
       position: absolute;
       top: 0;
+      font-family: $nav-font-family;
+      font-weight: $nav-font-weight;
       background-color: $navbar-default-bg;
       box-shadow: inset 0 -9px 0 0 lighten($brand-primary, 50%);
       overflow: auto;
@@ -78,7 +81,7 @@ body {
       }
       ul {
         float: left;
-        padding: 0;
+        padding: 0 4px;
         white-space: nowrap;
         @media (min-width: $screen-sm-min) {
           float: none;
@@ -90,8 +93,9 @@ body {
           }
           a {
             display: block;
-            line-height: 1.5;
-            padding: 12px 20px 20px;
+            line-height: 1.6;
+            padding: 11px 12px 20px;
+            font-weight: $nav-font-weight;
             @media (min-width: $screen-sm-min) {
               padding: 0;
             }
@@ -165,7 +169,9 @@ body {
 }
 
 
-[class^="ray-"] {
+// Tiles
+
+[class^="tile-"] {
   float: left;
   position: relative;
   width: 100%;
@@ -178,24 +184,27 @@ body {
   }
 }
 
-.clear-ray {
-  clear: both;
-}
+// Tile ratios
 
-@for $index from 1 through 8 {
-	[class^="ray-"]:nth-child(#{$index}n-#{$index}) {
-    @include random-persian-blue-shade();
+// Default = 1-1 ~ 4-4 : 61.8%
+@for $index from 1 through 4 {
+	.tile-ratio-#{$index}-#{$index} {
+    &:before {
+      @include ratio-to-height($index, $index);
+    }
 	}
 }
 
+// Tile widths + offsets
+
 @media (min-width: $screen-sm-min) {
   @for $index from 1 through 4 {
-  	.ray-#{$index} {
+  	.tile-col-#{$index} {
   		width: $index * 50%;
   	}
   }
   @for $index from 0 through 3 {
-    .ray-offset-#{$index} {
+    .tile-offset-#{$index} {
       margin-right: (3 - $index) * 50%;
     }
   }
@@ -203,13 +212,27 @@ body {
 
 @media (min-width: $screen-md-min) {
   @for $index from 1 through 4 {
-  	.ray-md-#{$index} {
+  	.tile-col-#{$index} {
   		width: $index * 25%;
   	}
   }
   @for $index from 0 through 3 {
-    .ray-md-offset-#{$index} {
+    .tile-offset-#{$index} {
       margin-right: (3 - $index) * 25%;
     }
   }
+}
+
+// New row
+
+.clear-tile {
+  clear: both;
+}
+
+// Generate bg shades
+
+@for $index from 1 through 8 {
+	[class^="tile-"]:nth-child(#{$index}n-#{$index}) {
+    @include random-persian-blue-shade();
+	}
 }

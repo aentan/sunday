@@ -122,6 +122,16 @@ activate :directory_indexes
 
 activate :syntax, :line_numbers => true
 
+# Thumbnail generator
+require 'middleman-thumbnailer'
+  activate :thumbnailer, 
+    :dimensions => {
+      :small => '200x',
+      :medium => '400x300'
+    },
+    :include_data_thumbnails => true,
+    :namespace_directory => %w(gallery)
+
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment

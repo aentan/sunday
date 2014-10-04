@@ -2,7 +2,7 @@
 # the following line to use "https"
 source 'http://rubygems.org'
 
-gem "middleman", "~> 3.3.6"
+gem 'middleman', :git => 'https://github.com/middleman/middleman.git', branch: 'v3-stable'
 gem "middleman-blog", "~> 3.5.3"
 
 # For feed.xml.builder
@@ -38,3 +38,6 @@ gem "nokogiri"
 
 # SVG fallback
 gem 'middleman-svg-fallback'
+
+# Thumbnail generation
+gem 'middleman-thumbnailer', :git => 'https://github.com/nhemsley/middleman-thumbnailer.git'

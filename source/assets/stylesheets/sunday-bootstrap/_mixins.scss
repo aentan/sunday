@@ -28,11 +28,19 @@
   appearance:         $appearance;
 }
 
-@mixin proportionate-height($ratio: 61.8%) {
+@function strip-units($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin proportionate-height() {
   content: "";
   display: block;
   height: 0;
-  padding-bottom: $ratio;
+}
+
+@mixin ratio-to-height($w: 1, $h: 1) {
+  $ratio: strip-units($h / $w);
+  padding-bottom: $ratio * 61.8%;
 }
 
 @mixin random-persian-blue-shade() {
