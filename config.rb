@@ -126,11 +126,31 @@ activate :syntax, :line_numbers => true
 require 'middleman-thumbnailer'
   activate :thumbnailer, 
     :dimensions => {
-      :small => '200x',
-      :medium => '400x300'
+      :lg1c => '288x',
+      :md1c => '240x',
+      :sm1c => '794x',
+      :xs1c => '480x',
+      :lg1c2x => '576x',
+      :md1c2x => '480x',
+      :sm1c2x => '1588x',
+      :xs1c2x => '960x',
+      :lg2c => '576x',
+      :md2c => '480x',
+      :sm2c => '1588x',
+      :xs2c => '960x',
+      :lg2c2x => '1152x',
+      :md2c2x => '960x',
+      :lg3c => '864x',
+      :md3c => '720x',
+      :lg3c2x => '1728x',
+      :md3c2x => '1440x',
+      :lg4c => '1152x',
+      :md4c => '960x',
+      :lg4c2x => '2304x',
+      :md4c2x => '1920x'
     },
     :include_data_thumbnails => true,
-    :namespace_directory => %w(gallery)
+    :namespace_directory => %w(photons)
 
 # Build-specific configuration
 configure :build do

@@ -187,28 +187,44 @@ body {
 // Tile ratios
 
 // Default = 1-1 ~ 4-4 : 61.8%
-@for $index from 1 through 4 {
-	.tile-ratio-#{$index}-#{$index} {
-    &:before {
-      @include ratio-to-height($index, $index);
-    }
-	}
+//@for $index from 1 through 4 {
+//  .tile-ratio-#{$index}-#{$index} {
+//    &:before {
+//      @include ratio-to-height($index, $index);
+//    }
+//  }
+//}
+
+$unique_values: (1, 0.5, 0.33333, 0.25, 0.2, 0.16667, 2, 0.66667, 0.4, 0.33333, 3, 1.5, 0.75, 0.6, 4, 1.33333, 0.8, 0.66667, 5, 2.5, 1.66667, 1.25, 0.83333, 6, 1.2);
+
+@for $i from 1 through 6 {
+  @for $j from 1 through 6 {
+//    @if (index($unique_values, $i / $j) == null) {
+      .tile-ratio-#{$i}-#{$j} {
+        &:before {
+          @include ratio-to-height($i, $j);
+        }
+      }
+//    }
+  }
 }
+
+
 
 // Tile widths + offsets
 
-@media (min-width: $screen-sm-min) {
-  @for $index from 1 through 4 {
-  	.tile-col-#{$index} {
-  		width: $index * 50%;
-  	}
-  }
-  @for $index from 0 through 3 {
-    .tile-offset-#{$index} {
-      margin-right: (3 - $index) * 50%;
-    }
-  }
-}
+//@media (min-width: $screen-sm-min) {
+//  @for $index from 1 through 4 {
+//    .tile-col-#{$index} {
+//      width: $index * 50%;
+//    }
+//  }
+//  @for $index from 0 through 3 {
+//    .tile-offset-#{$index} {
+//      margin-right: (3 - $index) * 50%;
+//    }
+//  }
+//}
 
 @media (min-width: $screen-md-min) {
   @for $index from 1 through 4 {
@@ -227,6 +243,28 @@ body {
 
 .clear-tile {
   clear: both;
+}
+
+// Images
+
+[class^="tile-"] > [data-picture] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  > span {
+    display: block;
+  }
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 // Generate bg shades

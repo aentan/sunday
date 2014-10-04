@@ -19,7 +19,20 @@
 </aside>
 
 <div id="main" role="main">
-  <a href="#" class="tile-col-4 tile-ratio-4-4"></a>
+  <a href="#" class="tile-col-4 tile-ratio-4-4">
+    <span data-picture data-alt="Sample1">
+      <span data-src="<%= thumbnail_url('assets/images/photons/s1.jpg', :sm1c) %>"></span>
+      <span data-src="<%= thumbnail_url('assets/images/photons/s1.jpg', :sm1c2x) %>"      data-media="(min-device-pixel-ratio: 2.0)"></span>
+      <span data-src="<%= thumbnail_url('assets/images/photons/s1.jpg', :md4c) %>"        data-media="(min-width: 768px)"></span>
+      <span data-src="<%= thumbnail_url('assets/images/photons/s1.jpg', :md4c2x) %>"      data-media="(min-width: 768px) and (min-device-pixel-ratio: 2.0)"></span>
+      <span data-src="<%= thumbnail_url('assets/images/photons/s1.jpg', :lg4c) %>"        data-media="(min-width: 992px)"></span>
+      <span data-src="<%= thumbnail_url('assets/images/photons/s1.jpg', :lg4c2x) %>"      data-media="(min-width: 992px) and (min-device-pixel-ratio: 2.0)"></span>
+      <!-- Fallback content for non-JS browsers. Same img src as the initial, unqualified source element. -->
+      <noscript>
+        <img src="images/photons/s1.jpg" alt="A giant stone face at The Bayon temple in Angkor Thom, Cambodia">
+      </noscript>
+    </span>
+  </a>
   <a href="#" class="tile-col-1 tile-offset-1 tile-ratio-1-1 clear-tile"></a>
   <a href="#" class="tile-col-1 tile-offset-2 tile-ratio-1-1 clear-tile"></a>
   <a href="#" class="tile-col-1 tile-offset-0 tile-ratio-1-1 clear-tile"></a>
@@ -33,4 +46,5 @@
   <a href="#" class="tile-col-1 tile-offset-2 tile-ratio-1-1 clear-tile"></a>
   <a href="#" class="tile-col-1 tile-offset-1 tile-ratio-1-1 clear-tile"></a>
   <a href="#" class="tile-col-2 tile-offset-3 tile-ratio-2-2 clear-tile"></a>
+  <a href="#" class="tile-col-2 tile-offset-1 tile-ratio-2-6 clear-tile"></a>
 </div>
