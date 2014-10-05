@@ -47,7 +47,7 @@ $link-hover-color:      darken($link-color, 12%);
 $font-family-sans-serif:  "soleil", sans-serif;
 $font-family-serif:       "rooney-web", sans-serif;
 $font-family-monospace:   Consolas, "Liberation Mono", Courier, monospace;
-$font-family-base:        $font-family-sans-serif;
+$font-family-base:        $font-family-serif;
 
 $font-size-base:          20px;
 $font-size-large:         floor($font-size-base * 1.60);  // ~24px
@@ -67,7 +67,7 @@ $line-height-small:       1.334;  // 24/18
 $line-height-extra-small: 1.25;   // 20/16
 
 $headings-font-family:    $font-family-sans-serif;
-$headings-font-weight:    700;
+$headings-font-weight:    400;
 $nav-font-family:         $font-family-sans-serif;
 $nav-font-weight:         500;
 $headings-line-height:    1;

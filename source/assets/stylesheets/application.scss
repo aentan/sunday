@@ -78,16 +78,21 @@ body {
         position: static;
         text-align: center;
         box-shadow: none;
+        font-size: $font-size-small;
+        text-transform: uppercase;
       }
       ul {
         float: left;
-        padding: 0 4px;
+        padding: 0 6px;
         white-space: nowrap;
+        min-width: 100%;
         @media (min-width: $screen-sm-min) {
           float: none;
+          padding: 0 4px;
         }
         li {
           display: inline-block;
+          min-width: 16.666%;
           @media (min-width: $screen-sm-min) {
             display: block;
           }
@@ -96,6 +101,7 @@ body {
             line-height: 1.6;
             padding: 11px 12px 20px;
             font-weight: $nav-font-weight;
+            text-align: center;
             @media (min-width: $screen-sm-min) {
               padding: 0;
             }
@@ -184,12 +190,31 @@ body {
   }
 }
 
+
+// Tile content vertical centering
+
 .tile-content {
   @include vertical-align-middle();
   text-align: center;
   position: absolute;
   z-index: 100;
+  margin: 0 auto;
+  padding: 48px;
   width: 100%;
+  @media (min-width: $screen-sm-min) {
+    padding: 64px;
+  }
+  h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+    margin-top: 0;
+  }
+}
+
+// Generate bg shades
+
+@for $index from 1 through 8 {
+	[class^="tile-col-"]:nth-child(#{$index}n-#{$index}) {
+    @include random-persian-blue-shade();
+	}
 }
 
 // Tile ratios
@@ -200,6 +225,20 @@ body {
       &:before {
         @include ratio-to-height($i, $j);
       }
+    }
+  }
+}
+
+@for $i from 1 through 6 {
+  .tile-ratio-#{$i}-v {
+    height: auto;
+    padding-bottom: 0;
+    background-color: transparent !important;
+    .tile-content {
+      position: static;
+      top: auto;
+      max-width: 784px;
+      @include translate(0, 0);
     }
   }
 }
@@ -232,6 +271,9 @@ body {
       margin-right: (3 - $index) * 25%;
     }
   }
+  .tile-wide {
+    width: 100%;
+  }
 }
 
 // New row
@@ -260,12 +302,4 @@ body {
     width: 100%;
     height: 100%;
   }
-}
-
-// Generate bg shades
-
-@for $index from 1 through 8 {
-	[class^="tile-col-"]:nth-child(#{$index}n-#{$index}) {
-    @include random-persian-blue-shade();
-	}
 }
