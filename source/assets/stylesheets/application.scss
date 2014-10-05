@@ -171,7 +171,7 @@ body {
 
 // Tiles
 
-[class^="tile-"] {
+[class^="tile-col-"] {
   float: left;
   position: relative;
   width: 100%;
@@ -184,28 +184,23 @@ body {
   }
 }
 
+.tile-content {
+  @include vertical-align-middle();
+  text-align: center;
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+}
+
 // Tile ratios
-
-// Default = 1-1 ~ 4-4 : 61.8%
-//@for $index from 1 through 4 {
-//  .tile-ratio-#{$index}-#{$index} {
-//    &:before {
-//      @include ratio-to-height($index, $index);
-//    }
-//  }
-//}
-
-$unique_values: (1, 0.5, 0.33333, 0.25, 0.2, 0.16667, 2, 0.66667, 0.4, 0.33333, 3, 1.5, 0.75, 0.6, 4, 1.33333, 0.8, 0.66667, 5, 2.5, 1.66667, 1.25, 0.83333, 6, 1.2);
 
 @for $i from 1 through 6 {
   @for $j from 1 through 6 {
-//    @if (index($unique_values, $i / $j) == null) {
-      .tile-ratio-#{$i}-#{$j} {
-        &:before {
-          @include ratio-to-height($i, $j);
-        }
+    .tile-ratio-#{$i}-#{$j} {
+      &:before {
+        @include ratio-to-height($i, $j);
       }
-//    }
+    }
   }
 }
 
@@ -247,7 +242,7 @@ $unique_values: (1, 0.5, 0.33333, 0.25, 0.2, 0.16667, 2, 0.66667, 0.4, 0.33333, 
 
 // Images
 
-[class^="tile-"] > [data-picture] {
+[class^="tile-col-"] > [data-picture] {
   position: absolute;
   top: 0;
   left: 0;
@@ -270,7 +265,7 @@ $unique_values: (1, 0.5, 0.33333, 0.25, 0.2, 0.16667, 2, 0.66667, 0.4, 0.33333, 
 // Generate bg shades
 
 @for $index from 1 through 8 {
-	[class^="tile-"]:nth-child(#{$index}n-#{$index}) {
+	[class^="tile-col-"]:nth-child(#{$index}n-#{$index}) {
     @include random-persian-blue-shade();
 	}
 }
