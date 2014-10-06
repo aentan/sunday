@@ -51,3 +51,14 @@
   top: 50%;
   @include translate(0, -50%);
 }
+
+@mixin horizontal-align-center {
+  left: 50%;
+  @include translate(-50%, 0);
+}
+
+@mixin bullseye {
+  top: 50%;
+  left: 50%;
+  @include translate(-50%, -50%);
+}

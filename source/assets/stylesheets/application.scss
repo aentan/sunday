@@ -190,6 +190,42 @@ body {
   }
 }
 
+.tile-hero {
+  height: 0;
+  // iPhone < 5
+  @media screen and (device-aspect-ratio: 2/3) {
+    padding-bottom: 324px;
+  }
+  // iPhone 5+
+  @media screen and (device-aspect-ratio: 40/71) and (-webkit-min-device-pixel-ratio: 2) {
+    padding-bottom: 412px;
+  }
+  // iPhone 6 Portrait
+  @media screen and (device-aspect-ratio: 375/667) and (-webkit-min-device-pixel-ratio: 2) {
+    padding-bottom: 512px;
+  }
+  // iPhone 6 Landscape
+  @media screen and (device-aspect-ratio: 375/667) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+    padding-bottom: 412px;
+  }
+  // iPhone 6 Plus Portrait
+  @media screen and (device-aspect-ratio: 9/16) and (-webkit-min-device-pixel-ratio: 3) {
+    padding-bottom: 581px;
+  }
+  // iPhone 6 Plus Landscape
+  @media screen and (device-aspect-ratio: 9/16) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+    padding-bottom: 456px;
+  }
+  // iPad Portrait
+  @media screen and (device-aspect-ratio: 3/4) {
+    padding-bottom: 100%;
+  }
+  // iPad landscape
+  @media screen and (device-aspect-ratio: 3/4) {
+    padding-bottom: 704px;
+  }
+}
+
 
 // Tile content vertical centering
 
@@ -271,9 +307,6 @@ body {
       margin-right: (3 - $index) * 25%;
     }
   }
-  .tile-wide {
-    width: 100%;
-  }
 }
 
 // New row
@@ -290,6 +323,7 @@ body {
   left: 0;
   bottom: 0;
   right: 0;
+  overflow: hidden;
   > span {
     display: block;
   }
@@ -299,7 +333,8 @@ body {
     left: 0;
     bottom: 0;
     right: 0;
-    width: 100%;
+    width: auto;
     height: 100%;
+    @include bullseye();
   }
 }
