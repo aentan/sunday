@@ -116,7 +116,9 @@ body {
   #main {
     float: left;
     width: 100%;
+    padding-bottom: $navbar-height - 8;
     @media (min-width: $screen-sm-min) {
+      padding-bottom: 0;
       margin-left: 20%;
       width: 80%;
     }
