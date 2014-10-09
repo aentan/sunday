@@ -39,7 +39,7 @@ $text-tracking:         0;
 // -------------------------
 
 $link-color:            $brand-primary;
-$link-hover-color:      darken($link-color, 12%);
+$link-hover-color:      lighten($link-color, 24%);
 
 // Typography
 // -------------------------
@@ -54,10 +54,10 @@ $font-size-large:         floor($font-size-base * 1.60);  // ~24px
 $font-size-small:         floor($font-size-base * 0.90);  // ~18px
 $font-size-xs:            floor($font-size-base * 0.80);  // ~16px
 
-$font-size-h1:            floor($font-size-base * 1.60);  // ~32px
-$font-size-h2:            floor($font-size-base * 1.20);  // ~24px
-$font-size-h3:            floor($font-size-base);         // ~20px
-$font-size-h4:            floor($font-size-base);         // ~20px
+$font-size-h1:            floor($font-size-base * 1.80);  // ~36px
+$font-size-h2:            floor($font-size-base * 1.60);  // ~32px
+$font-size-h3:            floor($font-size-base * 1.20);  // ~24px
+$font-size-h4:            $font-size-base;                // ~20px
 $font-size-h5:            $font-size-base;
 $font-size-h6:            $font-size-base;
 

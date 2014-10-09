@@ -124,33 +124,39 @@ activate :syntax, :line_numbers => true
 
 # Thumbnail generator
 require 'middleman-thumbnailer'
-  activate :thumbnailer, 
-    :dimensions => {
-      :lg_1c => '288x',
-      :md_1c => '240x',
-      :sm_1c => '794x',
-      :xs_1c => '480x',
-      :lg_1c_2x => '576x',
-      :md_1c_2x => '480x',
-      :sm_1c_2x => '1588x',
-      :xs_1c_2x => '960x',
-      :lg_2c => '576x',
-      :md_2c => '480x',
-      :sm_2c => '1588x',
-      :xs_2c => '960x',
-      :lg_2c_2x => '1152x',
-      :md_2c_2x => '960x',
-      :lg_3c => '864x',
-      :md_3c => '720x',
-      :lg_3c_2x => '1728x',
-      :md_3c_2x => '1440x',
-      :lg_4c => '1152x',
-      :md_4c => '960x',
-      :lg_4c_2x => '2304x',
-      :md_4c_2x => '1920x'
-    },
-    :include_data_thumbnails => true,
-    :namespace_directory => %w(photons)
+activate :thumbnailer, 
+  :dimensions => {
+    :lg_1c => '288x',
+    :md_1c => '240x',
+    :sm_1c => '794x',
+    :xs_1c => '480x',
+    :lg_1c_2x => '576x',
+    :md_1c_2x => '480x',
+    :sm_1c_2x => '1588x',
+    :xs_1c_2x => '960x',
+    :lg_2c => '576x',
+    :md_2c => '480x',
+    :sm_2c => '1588x',
+    :xs_2c => '960x',
+    :lg_2c_2x => '1152x',
+    :md_2c_2x => '960x',
+    :lg_3c => '864x',
+    :md_3c => '720x',
+    :lg_3c_2x => '1728x',
+    :md_3c_2x => '1440x',
+    :lg_4c => '1152x',
+    :md_4c => '960x',
+    :lg_4c_2x => '2304x',
+    :md_4c_2x => '1920x'
+  },
+  :include_data_thumbnails => true,
+  :namespace_directory => %w(photons)
+
+# svg-fallback
+require "middleman-svg-fallback"
+activate :svg_fallback,
+  :inkscape_bin => '/Applications/Inkscape.app/Contents/Resources/bin/inkscape',
+  :inkscape_options => '--export-dpi=100 --export-background-opacity=0'
 
 # Build-specific configuration
 configure :build do

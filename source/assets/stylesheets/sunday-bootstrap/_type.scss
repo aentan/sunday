@@ -5,9 +5,9 @@
 // Not too tight
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  line-height: $headings-line-height * 1.091;
+  line-height: $headings-line-height * 1.25;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.1em;
 }
 
 h1, .h1,
@@ -53,7 +53,7 @@ p, ol, ul {
   }
 }
 
-p + p {
+p:not(.lead) + p {
   text-indent: #{($line-height-base)}em;
   margin: 0;
 }
@@ -70,9 +70,10 @@ p + table {
 // Lead
 .lead {
   margin-bottom: $line-height-computed;
-  font-size: floor(($font-size-base * 1.091));
+  font-size: $font-size-large;
   font-weight: $text-font-weight;
   line-height: 1.25;
+  color: $gray-light;
   @media (min-width: $screen-sm-min) {
     font-size: ($font-size-base * 1.455);
   }

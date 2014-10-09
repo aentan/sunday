@@ -5,16 +5,25 @@
 // Be explicit
 body {
   font-weight: $text-font-weight;
-  font-size: 16px;
+  font-size: $font-size-small;
   @media (min-width: $screen-sm-min) {
     & {
-      font-size: 20px;
+      font-size: $font-size-base;
     }
   }
   @media (min-width: $screen-md-min) {
     & {
       font-size: $font-size-base;
     }
+  }
+}
+
+// Links
+
+a {
+  &:hover,
+  &:focus {
+    text-decoration: none;
   }
 }
 

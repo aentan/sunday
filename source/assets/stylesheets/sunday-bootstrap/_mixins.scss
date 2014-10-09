@@ -43,8 +43,8 @@
   padding-bottom: $ratio * 61.8%;
 }
 
-@mixin random-persian-blue-shade() {
-  background-color: lighten($brand-primary, 56 - (random(5) * 1.2));
+@mixin random-persian-blue-shade($intensity: 16) {
+  background-color: lighten($brand-primary, $intensity - (random(5) * 1.5));
 }
 
 @mixin vertical-align-middle {

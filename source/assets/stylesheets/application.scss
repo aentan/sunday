@@ -23,6 +23,7 @@ body {
 
 body {
   > aside {
+    @include clearfix();
     position: fixed;
     bottom: 0;
     left: 0;
@@ -35,6 +36,8 @@ body {
       bottom: none;
       float: left;
       width: 20%;
+      height: auto;
+      //border-right: 1px solid $navbar-default-border;
     }
     .logo-bar {
       background-color: $navbar-default-bg;
@@ -231,8 +234,7 @@ body {
 // Tile content vertical centering
 
 .tile-content {
-  @include vertical-align-middle();
-  text-align: center;
+  @include bullseye();
   position: absolute;
   z-index: 100;
   margin: 0 auto;
@@ -240,18 +242,22 @@ body {
   width: 100%;
   @media (min-width: $screen-sm-min) {
     padding: 64px;
+    text-align: center;
   }
   h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     margin-top: 0;
+  }
+  .lead {
+    margin: 0;
   }
 }
 
 // Generate bg shades
 
 @for $index from 1 through 8 {
-	[class^="tile-col-"]:nth-child(#{$index}n-#{$index}) {
+  .tile-shaded:nth-child(#{$index}n-#{$index}) {
     @include random-persian-blue-shade();
-	}
+  }
 }
 
 // Tile ratios
@@ -338,4 +344,61 @@ body {
     height: 100%;
     @include bullseye();
   }
+}
+
+
+// Tile for services
+
+.tile-service {
+  background-position: 50% 40%;
+  background-repeat: no-repeat;
+  .tile-content {
+    padding: 0;
+    .tile-caption {
+      color: white;
+    }
+  }
+}
+
+$services: service product retail mobility;
+.svg {
+  @each $service in $services {
+    .tile-#{$service}-design {
+      background-image: url('../images/icons/#{$service}_design.svg');
+    }
+  }
+}
+.no-svg {
+  @each $service in $services {
+    .tile-#{$service}-design {
+      background-image: url('../images/icons/#{$service}_design.png');
+    }
+  }
+}
+
+
+// Tile captions
+
+.tile-caption {
+  font-size: $font-size-xs;
+  font-weight: 200;
+  letter-spacing: 0;
+  text-transform: capitalize;
+  text-align: center;
+  margin: 0;
+  position: absolute;
+  top: 40px;
+  width: 100%;
+  color: $text-color;
+}
+
+.tile-label {
+  font-size: $font-size-small;
+  font-weight: 200;
+  letter-spacing: 0;
+  text-transform: capitalize;
+  text-align: center;
+  margin: 0;
+  width: 100%;
+  color: white;
 }
