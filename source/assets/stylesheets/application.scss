@@ -196,6 +196,14 @@ body {
 }
 
 [class^="tile-col-"].tile-hero {
+  .tile-content {
+    .tile-label-center {
+      text-align: left;
+      @media (min-width: $screen-sm-min) {
+        text-align: center;
+      }
+    }
+  }
   &:before {
     // iPhone < 5
     @media screen and (device-aspect-ratio: 2/3) {
@@ -236,27 +244,97 @@ body {
 // Tile content vertical centering
 
 .tile-content {
-  @include bullseye();
+//  @media (min-width: $screen-sm-min) {
+//    padding: 64px;
+//    text-align: center;
+//  }
   position: absolute;
-  z-index: 100;
-  margin: 0 auto;
-  padding: 48px;
+  left: 0;
+  top: 0;
+  z-index: 1000;
   width: 100%;
-  @media (min-width: $screen-sm-min) {
-    padding: 64px;
+  height: 100%;
+  padding: 16px;
+  [class^="tile-label"] {
+    float: left;
+    position: absolute;
+    margin: 0;
+    padding: 24px;
+  }
+  .tile-label-center {
+    @include bullseye();
+    width: 100%;
+    padding-left: 32px;
+    padding-right: 32px;
     text-align: center;
   }
-  h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-    margin-top: 0;
+  .tile-label-nw {
+    top: 0;
+    left: 0;
+  }
+  .tile-label-n {
+    top: 0;
+    width: 100%;
+    text-align: center;
+  }
+  .tile-label-ne {
+    top: 0;
+    right: 0;
+    text-align: right;
+  }
+  .tile-label-w {
+    @include vertical-align-middle();
+    left: 0;
+  }
+  .tile-label-w {
+    @include vertical-align-middle();
+    right: 0;
+  }
+  .tile-label-sw {
+    bottom: 0;
+    left: 0;
+  }
+  .tile-label-s {
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+  }
+  .tile-label-se {
+    bottom: 0;
+    right: 0;
+    text-align: right;
   }
   .lead {
     margin: 0;
   }
 }
 
+// Label styles
+
+.label-caption {
+  font-size: $font-size-small;
+  font-weight: 200;
+  letter-spacing: 0;
+  color: $text-color;
+  @media (min-width: $screen-sm-min) {
+    font-size: $font-size-xs;
+  }
+}
+
+.label-heading {
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.label-reversed {
+  color: white;
+}
+
+
 // Generate bg shades
 
-@for $index from 1 through 8 {
+@for $index from 1 through 10 {
   .tile-shaded:nth-child(#{$index}n-#{$index}) {
     @include random-persian-blue-shade();
   }
@@ -276,14 +354,34 @@ body {
 
 @for $i from 1 through 6 {
   .tile-ratio-#{$i}-v {
-    height: auto;
-    padding-bottom: 0;
+    &:before {
+      height: auto;
+      padding-bottom: 0;
+    }
     background-color: transparent !important;
     .tile-content {
+      @include clearfix();
       position: static;
-      top: auto;
-      max-width: 784px;
-      @include translate(0, 0);
+      padding-top: 24px;
+      padding-bottom: 24px;
+      margin-left: -16px;
+      margin-right: -16px;
+      @media (min-width: $screen-sm-min) {
+        padding-top: 48px;
+        padding-bottom: 48px;
+      }
+      [class^="tile-label"] {
+        position: static;
+        left: auto;
+        top: auto;
+        @include translate(0, 0);
+      }
+      .tile-label-center {
+        text-align: left;
+        @media (min-width: $screen-sm-min) {
+          text-align: center;
+        }
+      }
     }
   }
 }
@@ -376,31 +474,4 @@ $services: service product retail mobility;
       background-image: url('../images/icons/#{$service}_design.png');
     }
   }
-}
-
-
-// Tile captions
-
-.tile-caption {
-  font-size: $font-size-xs;
-  font-weight: 200;
-  letter-spacing: 0;
-  text-transform: capitalize;
-  text-align: center;
-  margin: 0;
-  position: absolute;
-  top: 40px;
-  width: 100%;
-  color: $text-color;
-}
-
-.tile-label {
-  font-size: $font-size-small;
-  font-weight: 200;
-  letter-spacing: 0;
-  text-transform: capitalize;
-  text-align: center;
-  margin: 0;
-  width: 100%;
-  color: white;
 }

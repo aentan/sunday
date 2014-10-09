@@ -44,7 +44,7 @@
 }
 
 @mixin random-persian-blue-shade($intensity: 16) {
-  background-color: lighten($brand-primary, $intensity - (random(5) * 1.5));
+  background-color: lighten($brand-primary, $intensity - (random(5) * 2));
 }
 
 @mixin vertical-align-middle {
@@ -62,3 +62,4 @@
   left: 50%;
   @include translate(-50%, -50%);
 }
+
