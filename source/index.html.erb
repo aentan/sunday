@@ -25,28 +25,29 @@
   </div>
 </div>
 
-<a href="#" class="tile-col-1 tile-offset-1 tile-ratio-1-1 clear-tile tile-service tile-service-design tile-shaded">
+<% link_to '/services/#service-design', class: 'tile-col-1 tile-offset-1 tile-ratio-1-1 clear-tile tile-service tile-service-design-reversed tile-shaded' do %>
   <div class="tile-content">
     <h3 class="tile-label-s label-caption label-reversed">Service Design</h3>
   </div>
-</a>
+<% end %>
 
-<a href="#" class="tile-col-1 tile-offset-2 tile-ratio-1-1 clear-tile tile-service tile-product-design tile-shaded">
+<% link_to '/services/#product-design', class: 'tile-col-1 tile-offset-2 tile-ratio-1-1 clear-tile tile-service tile-product-design-reversed tile-shaded' do %>
   <div class="tile-content">
     <h3 class="tile-label-s label-caption label-reversed">Product Design</h3>
   </div>
-</a>
+<% end %>
 
-<a href="#" class="tile-col-1 tile-offset-0 tile-ratio-1-1 clear-tile tile-service tile-mobility-design tile-shaded">
-  <div class="tile-content">
-    <h3 class="tile-label-s label-caption label-reversed">Mobility Design</h3>
-  </div>
-</a>
-<a href="#" class="tile-col-1 tile-offset-3 tile-ratio-1-1 tile-service tile-retail-design tile-shaded">
+<% link_to '/services/#retail-design', class: 'tile-col-1 tile-offset-3 tile-ratio-1-1 clear-tile tile-service tile-retail-design-reversed tile-shaded' do %>
   <div class="tile-content">
     <h3 class="tile-label-s label-caption label-reversed">Retail Design</h3>
   </div>
-</a>
+<% end %>
+
+<% link_to '/services/#mobility-design', class: 'tile-col-1 tile-offset-0 tile-ratio-1-1 tile-service tile-mobility-design-reversed tile-shaded' do %>
+  <div class="tile-content">
+    <h3 class="tile-label-s label-caption label-reversed">Mobility Design</h3>
+  </div>
+<% end %>
 
 <% link_to '/work/polligraf/', class: 'tile-col-2 tile-offset-2 tile-ratio-2-2 clear-tile' do %>
   <span data-picture data-alt="Polligraf">
@@ -57,7 +58,7 @@
     <span data-src="<%= thumbnail_url('/assets/images/work/polligraf.jpg', :lg_1c) %>"    data-media="(min-width: 992px)"></span>
     <span data-src="<%= thumbnail_url('/assets/images/work/polligraf.jpg', :lg_1c_2x) %>"  data-media="(min-width: 992px) and (min-device-pixel-ratio: 2.0), (min-width: 992px) and (-webkit-min-device-pixel-ratio: 2.0)"></span>
     <noscript>
-      <img src="<%= thumbnail_url('/assets/images/work/polligraf.jpg', :sm_1c) %>" alt="Intro">
+      <img src="<%= thumbnail_url('/assets/images/work/polligraf.jpg', :sm_1c) %>" alt="Polligraf">
     </noscript>
   </span>
   <div class="tile-content">
@@ -74,7 +75,7 @@
     <span data-src="<%= thumbnail_url('/assets/images/work/valli.jpg', :lg_1c) %>"    data-media="(min-width: 992px)"></span>
     <span data-src="<%= thumbnail_url('/assets/images/work/valli.jpg', :lg_1c_2x) %>"  data-media="(min-width: 992px) and (min-device-pixel-ratio: 2.0), (min-width: 992px) and (-webkit-min-device-pixel-ratio: 2.0)"></span>
     <noscript>
-      <img src="<%= thumbnail_url('/assets/images/work/valli.jpg', :sm_1c) %>" alt="Intro">
+      <img src="<%= thumbnail_url('/assets/images/work/valli.jpg', :sm_1c) %>" alt="Valli">
     </noscript>
   </span>
   <div class="tile-content">
@@ -91,7 +92,7 @@
     <span data-src="<%= thumbnail_url('/assets/images/work/aen.jpg', :lg_1c) %>"    data-media="(min-width: 992px)"></span>
     <span data-src="<%= thumbnail_url('/assets/images/work/aen.jpg', :lg_1c_2x) %>"  data-media="(min-width: 992px) and (min-device-pixel-ratio: 2.0), (min-width: 992px) and (-webkit-min-device-pixel-ratio: 2.0)"></span>
     <noscript>
-      <img src="<%= thumbnail_url('/assets/images/work/aen.jpg', :sm_1c) %>" alt="Intro">
+      <img src="<%= thumbnail_url('/assets/images/work/aen.jpg', :sm_1c) %>" alt="Aen">
     </noscript>
   </span>
   <div class="tile-content">
@@ -108,7 +109,7 @@
     <span data-src="<%= thumbnail_url('/assets/images/work/weesoon.jpg', :lg_1c) %>"    data-media="(min-width: 992px)"></span>
     <span data-src="<%= thumbnail_url('/assets/images/work/weesoon.jpg', :lg_1c_2x) %>"  data-media="(min-width: 992px) and (min-device-pixel-ratio: 2.0), (min-width: 992px) and (-webkit-min-device-pixel-ratio: 2.0)"></span>
     <noscript>
-      <img src="<%= thumbnail_url('/assets/images/work/weesoon.jpg', :sm_1c) %>" alt="Intro">
+      <img src="<%= thumbnail_url('/assets/images/work/weesoon.jpg', :sm_1c) %>" alt="Wee Soon">
     </noscript>
   </span>
   <div class="tile-content">
@@ -125,7 +126,7 @@
     <span data-src="<%= thumbnail_url('/assets/images/work/walkforwater.jpg', :lg_2c) %>"    data-media="(min-width: 992px)"></span>
     <span data-src="<%= thumbnail_url('/assets/images/work/walkforwater.jpg', :lg_2c_2x) %>"  data-media="(min-width: 992px) and (min-device-pixel-ratio: 2.0), (min-width: 992px) and (-webkit-min-device-pixel-ratio: 2.0)"></span>
     <noscript>
-      <img src="<%= thumbnail_url('/assets/images/work/walkforwater.jpg', :sm_1c) %>" alt="Intro">
+      <img src="<%= thumbnail_url('/assets/images/work/walkforwater.jpg', :sm_1c) %>" alt="Walk for Water">
     </noscript>
   </span>
   <div class="tile-content">
@@ -146,8 +147,8 @@
   </div>
 </a> -->
 
-<a href="#" class="tile-col-2 tile-offset-1 tile-ratio-2-2 clear-tile">
-  <span data-picture data-alt="Sunday + AEN">
+<% link_to '/and-sunday/lemons/', class: 'tile-col-2 tile-offset-1 tile-ratio-2-2 clear-tile' do %>
+  <span data-picture data-alt="Lemons">
     <span data-src="<%= thumbnail_url('/assets/images/work/lemons.png', :sm_1c) %>"></span>
     <span data-src="<%= thumbnail_url('/assets/images/work/lemons.png', :sm_1c_2x) %>"  data-media="(min-device-pixel-ratio: 2.0), (-webkit-min-device-pixel-ratio: 2.0)"></span>
     <span data-src="<%= thumbnail_url('/assets/images/work/lemons.png', :md_1c) %>"    data-media="(min-width: 768px)"></span>
@@ -155,13 +156,13 @@
     <span data-src="<%= thumbnail_url('/assets/images/work/lemons.png', :lg_1c) %>"    data-media="(min-width: 992px)"></span>
     <span data-src="<%= thumbnail_url('/assets/images/work/lemons.png', :lg_1c_2x) %>"  data-media="(min-width: 992px) and (min-device-pixel-ratio: 2.0), (min-width: 992px) and (-webkit-min-device-pixel-ratio: 2.0)"></span>
     <noscript>
-      <img src="<%= thumbnail_url('/assets/images/work/lemons.png', :sm_1c) %>" alt="Intro">
+      <img src="<%= thumbnail_url('/assets/images/work/lemons.png', :sm_1c) %>" alt="Lemons">
     </noscript>
   </span>
   <div class="tile-content">
     <h3 class="tile-label-center label-heading">Beautiful identities.</h3>
   </div>
-</a>
+<% end %>
 
 <div class="tile-col-1 tile-offset-2 tile-ratio-1-1 clear-tile tile-shaded">
   <div class="tile-content">

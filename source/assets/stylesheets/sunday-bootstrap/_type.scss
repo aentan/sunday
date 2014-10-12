@@ -71,7 +71,6 @@ p + table {
   font-size: $font-size-large;
   font-weight: $text-font-weight;
   line-height: 1.25;
-  color: $gray-light;
   @media (min-width: $screen-sm-min) {
     font-size: ($font-size-base * 1.455);
   }

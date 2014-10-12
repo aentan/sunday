@@ -420,9 +420,7 @@ $sections: work services people and-sunday lab contact;
     margin: 0;
   }
   & + p {
-    @media (min-width: $screen-sm-min) {
-      margin-top: $line-height-computed;
-    }
+    margin-top: $line-height-computed;
   }
 }
 
@@ -605,11 +603,19 @@ $sections: work services people and-sunday lab contact;
   }
 }
 
+.tile-service-icon {
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
 $services: service product retail mobility;
 .svg {
   @each $service in $services {
     .tile-#{$service}-design {
       background-image: url('../images/icons/#{$service}_design.svg');
+    }
+    .tile-#{$service}-design-reversed {
+      background-image: url('../images/icons/#{$service}_design_reversed.svg');
     }
   }
 }
@@ -617,6 +623,9 @@ $services: service product retail mobility;
   @each $service in $services {
     .tile-#{$service}-design {
       background-image: url('../images/icons/#{$service}_design.png');
+    }
+    .tile-#{$service}-design-reversed {
+      background-image: url('../images/icons/#{$service}_design_reversed.png');
     }
   }
 }
