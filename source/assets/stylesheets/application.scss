@@ -127,6 +127,17 @@ body {
 }
 
 
+// Active nav indication
+$sections: work services people and-sunday lab contact;
+@each $section in $sections {
+  .#{$section} #nav-#{$section} {
+    a {
+      color: lighten($brand-primary, 40%);
+    }
+  }
+}
+
+
 .menu-toggle {
   @extend .text-hide;
   padding: 18px 16px;

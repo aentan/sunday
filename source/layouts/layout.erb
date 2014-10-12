@@ -13,8 +13,9 @@
     <%= stylesheet_link_tag "application", {:rel=>"stylesheet"} %>
     <%= partial "webfonts" %>
   </head>
-  <body>
+  <body class="<%= page_classes %>">
     
+    <%= partial 'nav' %>
     <%= yield %>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
