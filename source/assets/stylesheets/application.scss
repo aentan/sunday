@@ -457,8 +457,8 @@ $sections: work services people and-sunday lab contact;
 
 // Tile ratios
 
-@for $i from 1 through 6 {
-  @for $j from 1 through 6 {
+@for $i from 1 through 9 {
+  @for $j from 1 through 9 {
     .tile-ratio-#{$i}-#{$j} {
       &:before {
         @include ratio-to-height($i, $j);
