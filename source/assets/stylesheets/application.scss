@@ -54,7 +54,7 @@ body {
         background-size: 32px 32px;
         &:before {
           @include proportionate-height();
-          @include ratio-to-height(1, 1.618);
+          @include ratio-to-height(1, 1.24);
         }
         @media (min-width: $screen-md-min) {
           position: static;
@@ -304,23 +304,20 @@ $sections: work services people and-sunday lab contact;
   .tile-label-nne {
     top: 0;
     right: 0;
-    text-align: right;
   }
   .tile-label-ne {
     top: 0;
     right: 0;
-    text-align: right;
   }
   .tile-label-ene {
     top: 0;
     right: 0;
-    text-align: right;
   }
   .tile-label-w {
     @include vertical-align-middle();
     left: 0;
   }
-  .tile-label-w {
+  .tile-label-e {
     @include vertical-align-middle();
     right: 0;
   }
@@ -384,6 +381,18 @@ $sections: work services people and-sunday lab contact;
       top: 20%;
     }
   }
+  
+  .tile-label-ene,
+  .tile-label-ese,
+  .tile-label-nne,
+  .tile-label-sse,
+  .tile-label-se,
+  .tile-label-ne,
+  .tile-label-e {
+    .label-caption {
+      text-align: right;
+    }
+  }
 }
 
 // Label styles
@@ -405,6 +414,11 @@ $sections: work services people and-sunday lab contact;
   margin: 4px 0;
   @media (min-width: $screen-sm-min) {
     margin: 0;
+  }
+  & + p {
+    @media (min-width: $screen-sm-min) {
+      margin-top: $line-height-computed;
+    }
   }
 }
 

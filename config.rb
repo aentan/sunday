@@ -150,7 +150,7 @@ activate :thumbnailer,
     :md_4c_2x => '1920x'
   },
   :include_data_thumbnails => true,
-  :namespace_directory => %w(photons)
+  :namespace_directory => %w(work)
 
 # svg-fallback
 require "middleman-svg-fallback"
