@@ -198,7 +198,7 @@ body {
 
 [class^="tile-col-"].tile-hero {
   .tile-content {
-    .tile-label-center {
+    [class^="tile-label-"] {
       text-align: left;
       @media (min-width: $screen-sm-min) {
         text-align: center;
@@ -261,6 +261,10 @@ body {
     position: absolute;
     margin: 0;
     padding: 24px;
+    .tile-meta {
+      font-size: $font-size-xs;
+      font-family: $font-family-serif;
+    }
   }
   .tile-label-center {
     @include bullseye();
@@ -269,7 +273,15 @@ body {
     padding-right: 32px;
     text-align: center;
   }
+  .tile-label-wnw {
+    top: 0;
+    left: 0;
+  }
   .tile-label-nw {
+    top: 0;
+    left: 0;
+  }
+  .tile-label-nnw {
     top: 0;
     left: 0;
   }
@@ -278,7 +290,17 @@ body {
     width: 100%;
     text-align: center;
   }
+  .tile-label-nne {
+    top: 0;
+    right: 0;
+    text-align: right;
+  }
   .tile-label-ne {
+    top: 0;
+    right: 0;
+    text-align: right;
+  }
+  .tile-label-ene {
     top: 0;
     right: 0;
     text-align: right;
@@ -291,7 +313,15 @@ body {
     @include vertical-align-middle();
     right: 0;
   }
+  .tile-label-wsw {
+      bottom: 0;
+      left: 0;
+    }
   .tile-label-sw {
+    bottom: 0;
+    left: 0;
+  }
+  .tile-label-ssw {
     bottom: 0;
     left: 0;
   }
@@ -300,13 +330,48 @@ body {
     width: 100%;
     text-align: center;
   }
+  .tile-label-sse {
+    bottom: 0;
+    right: 0;
+    text-align: right;
+  }
   .tile-label-se {
+    bottom: 0;
+    right: 0;
+    text-align: right;
+  }
+  .tile-label-ese {
     bottom: 0;
     right: 0;
     text-align: right;
   }
   .lead:last-child {
     margin: 0;
+  }
+  // Midpoints
+  .tile-label-ese,
+  .tile-label-wsw {
+    @media (min-width: $screen-md-min) {
+      bottom: 20%;
+    }
+  }
+  .tile-label-ssw,
+  .tile-label-nnw {
+    @media (min-width: $screen-md-min) {
+      left: 20%;
+    }
+  }
+  .tile-label-nne,
+  .tile-label-sse {
+    @media (min-width: $screen-md-min) {
+      right: 20%;
+    }
+  }
+  .tile-label-ene,
+  .tile-label-wnw {
+    @media (min-width: $screen-md-min) {
+      top: 20%;
+    }
   }
 }
 
@@ -351,6 +416,14 @@ body {
 @for $index from 1 through 10 {
   .tile-muted:nth-child(#{$index}n-#{$index}) {
     @include random-persian-blue-shade(16);
+  }
+}
+
+// Tinted
+
+.tile-tinted {
+  .tile-content {
+    background-color: rgba(red($brand-primary), green($brand-primary), blue($brand-primary), 0.8);
   }
 }
 
