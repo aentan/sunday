@@ -433,16 +433,19 @@ $sections: work services people and-sunday lab contact;
 
 // Generate bg shades
 
-@for $index from 1 through 10 {
-  .tile-shaded:nth-child(#{$index}n-#{$index}) {
-    @include random-persian-blue-shade();
+//@for $index from 1 through 10 {
+//  .tile-shaded:nth-child(#{$index}n-#{$index}) {
+//    @include random-persian-blue-shade();
+//  }
+//}
+
+.tile-shaded {
+  background-color: $brand-primary;
+  &:nth-child(odd) {
+    background-color: lighten($brand-primary, 4%);
   }
 }
-@for $index from 1 through 10 {
-  .tile-muted:nth-child(#{$index}n-#{$index}) {
-    @include random-persian-blue-shade(16);
-  }
-}
+
 
 // Tinted
 
