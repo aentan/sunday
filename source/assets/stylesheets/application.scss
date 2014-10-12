@@ -42,6 +42,7 @@ body {
     .logo-bar {
       background-color: $navbar-default-bg;
       position: relative;
+      height: $navbar-height - 8;
       z-index: 1000;
       .logo {
         @extend .text-hide;
@@ -54,13 +55,16 @@ body {
         background-size: 32px 32px;
         &:before {
           @include proportionate-height();
-          @include ratio-to-height(1, 1.24);
+          @include ratio-to-height(1, 1.618);
         }
         @media (min-width: $screen-md-min) {
           position: static;
           float: left;
           width: 100%;
           background-size: 64px 64px;
+          &:before {
+            @include ratio-to-height(1, 1.24);
+          }
         }
       }
     }
