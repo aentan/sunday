@@ -42,7 +42,7 @@ body {
     .logo-bar {
       background-color: $navbar-default-bg;
       position: relative;
-      z-index: $zindex-navbar;
+      z-index: 1000;
       .logo {
         @extend .text-hide;
         display: block;
@@ -76,6 +76,7 @@ body {
       box-shadow: inset 0 -9px 0 0 lighten($brand-primary, 50%);
       overflow: auto;
       -webkit-overflow-scrolling: touch;
+      z-index: 0;
       @media (min-width: $screen-md-min) {
         float: none;
         position: static;
@@ -251,7 +252,7 @@ body {
   position: absolute;
   left: 0;
   top: 0;
-  z-index: 1000;
+  z-index: 900;
   width: 100%;
   height: 100%;
   padding: 16px;
@@ -483,7 +484,7 @@ body {
     }
     @media (max-width: $screen-xs-max) {
       .tile-label-s {
-        bottom: 24%;
+        bottom: 16%;
       }
     }
     @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
