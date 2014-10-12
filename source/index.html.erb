@@ -8,38 +8,40 @@
   </div>
   <nav>
     <ul>
-      <li><a href="#">Work</a></li><!--
+      <!-- <li><a href="#">Work</a></li> --><!--
       --><li><a href="#">Services</a></li><!--
       --><li><a href="#">People</a></li><!--
-      --><li><a href="#">&amp;Sunday</a></li><!--
-      --><li><a href="#">Labs</a></li><!--
+      --><li><a href="#">&amp; Sunday</a></li><!--
+      --><li><a href="#">Lab</a></li><!--
       --><li><a href="#">Contact</a></li>
     </ul>
   </nav>
 </aside>
 
 <div id="main" role="main">
-  <div class="tile-col-4 tile-ratio-4-4 tile-hero">
+  <a href="#" class="tile-col-4 tile-ratio-4-4 tile-hero">
     <div class="tile-content">
-      <h2 class="tile-label-center label-heading">Solar-powered design</h2>
+      <h2 class="tile-label-center label-heading">Lemons &ndash; Fresh and mouth-watering identities for startups.</h2>
     </div>
     <span data-picture data-alt="Intro">
-      <span data-src="<%= thumbnail_url('assets/images/photons/hero1.jpg', :sm_1c) %>"></span>
-      <span data-src="<%= thumbnail_url('assets/images/photons/hero1.jpg', :sm_1c_2x) %>"  data-media="(min-device-pixel-ratio: 2.0), (-webkit-min-device-pixel-ratio: 2.0)"></span>
-      <span data-src="<%= thumbnail_url('assets/images/photons/hero1.jpg', :md_4c) %>"    data-media="(min-width: 768px)"></span>
-      <span data-src="<%= thumbnail_url('assets/images/photons/hero1.jpg', :md_4c_2x) %>"  data-media="(min-width: 768px) and (min-device-pixel-ratio: 2.0), (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2.0)"></span>
-      <span data-src="<%= thumbnail_url('assets/images/photons/hero1.jpg', :lg_4c) %>"    data-media="(min-width: 992px)"></span>
-      <span data-src="<%= thumbnail_url('assets/images/photons/hero1.jpg', :lg_4c_2x) %>"  data-media="(min-width: 992px) and (min-device-pixel-ratio: 2.0), (min-width: 992px) and (-webkit-min-device-pixel-ratio: 2.0)"></span>
+      <span data-src="<%= thumbnail_url('assets/images/photons/lemons.png', :sm_1c) %>"></span>
+      <span data-src="<%= thumbnail_url('assets/images/photons/lemons.png', :sm_1c_2x) %>"  data-media="(min-device-pixel-ratio: 2.0), (-webkit-min-device-pixel-ratio: 2.0)"></span>
+      <span data-src="<%= thumbnail_url('assets/images/photons/lemons.png', :md_4c) %>"    data-media="(min-width: 768px)"></span>
+      <span data-src="<%= thumbnail_url('assets/images/photons/lemons.png', :md_4c_2x) %>"  data-media="(min-width: 768px) and (min-device-pixel-ratio: 2.0), (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2.0)"></span>
+      <span data-src="<%= thumbnail_url('assets/images/photons/lemons.png', :lg_4c) %>"    data-media="(min-width: 992px)"></span>
+      <span data-src="<%= thumbnail_url('assets/images/photons/lemons.png', :lg_4c_2x) %>"  data-media="(min-width: 992px) and (min-device-pixel-ratio: 2.0), (min-width: 992px) and (-webkit-min-device-pixel-ratio: 2.0)"></span>
       <noscript>
-        <img src="<%= thumbnail_url('assets/images/photons/hero1.jpg', :sm_1c) %>" alt="Intro">
+        <img src="<%= thumbnail_url('assets/images/photons/lemons.png', :sm_1c) %>" alt="Intro">
       </noscript>
     </span>
-  </div>
-  <div class="tile-col-4 tile-offset-3 tile-ratio-3-v clear-tile">
+  </a>
+  <!-- <div class="tile-col-4 tile-offset-3 tile-ratio-3-v clear-tile">
     <div class="tile-content">
-      <p class="tile-label-center lead"><a href="#">We design and build beautiful experiences.</a></p>
+      <div class="tile-label-center">
+        <p class="lead"><a href="#">We design and build beautiful experiences.</a></p>
+      </div>
     </div>
-  </div>
+  </div> -->
   <a href="#" class="tile-col-1 tile-offset-1 tile-ratio-1-1 clear-tile tile-service tile-service-design tile-shaded">
     <div class="tile-content">
       <h3 class="tile-label-s label-caption label-reversed">Service Design</h3>
@@ -60,8 +62,8 @@
       <h3 class="tile-label-s label-caption label-reversed">Retail Design</h3>
     </div>
   </a>
-  <a href="#" class="tile-col-2 tile-offset-2 tile-ratio-2-2 clear-tile">
-    <span data-picture data-alt="Team">
+  <a href="#" class="tile-col-2 tile-offset-2 tile-ratio-2-2 clear-tile tile-shaded">
+    <!-- <span data-picture data-alt="Team">
       <span data-src="<%= thumbnail_url('assets/images/photons/team.jpg', :sm_1c) %>"></span>
       <span data-src="<%= thumbnail_url('assets/images/photons/team.jpg', :sm_1c_2x) %>"  data-media="(min-device-pixel-ratio: 2.0), (-webkit-min-device-pixel-ratio: 2.0)"></span>
       <span data-src="<%= thumbnail_url('assets/images/photons/team.jpg', :md_2c) %>"    data-media="(min-width: 768px)"></span>
@@ -71,7 +73,7 @@
       <noscript>
         <img src="<%= thumbnail_url('assets/images/photons/team.jpg', :sm_1c) %>" alt="Intro">
       </noscript>
-    </span>
+    </span> -->
     <div class="tile-content">
       <h3 class="tile-label-center label-caption label-reversed">People</h3>
     </div>
@@ -134,17 +136,20 @@
       <h3 class="tile-label-sw label-caption label-reversed">Jun Teh, Designer</h3>
     </div>
   </a>
-  <div class="tile-col-4 tile-offset-3 tile-ratio-3-v clear-tile">
+  <!-- <div class="tile-col-4 tile-offset-3 tile-ratio-3-v clear-tile">
     <div class="tile-content">
       <p class="tile-label-center lead"><a href="#">Make and break things with us. Join the team.</a></p>
     </div>
-  </div>
-  <a href="#" class="tile-col-2 tile-offset-3 tile-ratio-2-2 clear-tile tile-shaded">
+  </div> -->
+  <div class="tile-col-2 tile-offset-1 tile-ratio-2-2 clear-tile tile-shaded">
     <div class="tile-content">
-      <h3 class="tile-label-center label-heading label-reversed">&amp; Sunday</h3>
+      <div class="tile-label-center">
+        <h3 class="label-heading label-reversed">&amp; Sunday</h3>
+        <p class="label-reversed label-muted"><em><small>Coming soon</small></em></p>
+      </div>
     </div>
-  </a>
-  <a href="#" class="tile-col-2 tile-offset-1 tile-ratio-2-2 clear-tile tile-shaded">
+  </div>
+  <!-- <a href="#" class="tile-col-2 tile-offset-1 tile-ratio-2-2 clear-tile tile-shaded">
     <div class="tile-content">
       <h3 class="tile-label-center label-heading label-reversed">Sunday + BIG 3</h3>
     </div>
@@ -153,20 +158,27 @@
     <div class="tile-content">
       <h3 class="tile-label-center label-heading label-reversed">Sunday + FIXX</h3>
     </div>
-  </a>
-  <a href="#" class="tile-col-2 tile-offset-1 tile-ratio-2-2 clear-tile tile-shaded">
+  </a> -->
+  <a href="#" class="tile-col-2 tile-offset-3 tile-ratio-2-2 clear-tile tile-shaded">
     <div class="tile-content">
       <h3 class="tile-label-center label-heading label-reversed">Sunday + AEN</h3>
     </div>
   </a>
-  <a href="#" class="tile-col-1 tile-offset-2 tile-ratio-1-1 clear-tile tile-shaded">
+  <div class="tile-col-1 tile-offset-1 tile-ratio-1-1 clear-tile tile-shaded">
     <div class="tile-content">
-      <h3 class="tile-label-center label-heading label-reversed">Sunday Lab</h3>
+      <div class="tile-label-center">
+        <h3 class="label-heading label-reversed">Sunday Lab</h3>
+        <p class="label-reversed label-muted "><em><small>Coming soon</small></em></p>
+      </div>
     </div>
-  </a>
-  <div class="tile-col-3 tile-offset-3 tile-ratio-3-2 clear-tile">
+  </div>
+  <div id="tile-contact" class="tile-col-2 tile-offset-2 tile-ratio-2-v clear-tile">
     <div class="tile-content">
-      Footer
+      <div class="tile-label-center">
+        <p>We are a Singapore-based studio available for work with brands and partners anywhere in the world.</p>
+        <p><a href="mailto:valli@madebysunday.co">valli@madebysunday.co</a></p>
+        <p>+65 8162 3547</p>
+      </dov>
     </div>
   </div>
 </div>
