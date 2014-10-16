@@ -33,6 +33,9 @@ p, ol, ul {
   img {
     margin: ($line-height-computed*.75) 0;
   }
+  strong {
+    font-family: $font-family-sans-serif;
+  }
 }
 
 @media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
