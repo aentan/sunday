@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="46px" height="32px" viewBox="0 0 46 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.1.1 (8761) - http://www.bohemiancoding.com/sketch -->
+    <title>contact_email</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <path d="M44,27 C44,28.656 42.656,30 41,30 L5,30 C3.344,30 2,28.656 2,27 L2,5 C2,3.344 3.344,2 5,2 L41,2 C42.656,2 44,3.344 44,5 L44,27 L44,27 Z M43,3 L23,19 L3,3" id="contact_email" stroke="#1C39BB" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" sketch:type="MSShapeGroup"></path>
+    </g>
+</svg>
