@@ -66,7 +66,7 @@
   </div>
 <% end %>
 
-<a href="#" class="tile-col-1 tile-offset-0 tile-ratio-1-1 clear-tile tile-tinted">
+<% link_to '/people/#valli', class: 'tile-col-1 tile-offset-0 tile-ratio-1-1 clear-tile tile-tinted' do %>
   <span data-picture data-alt="Valli">
     <span data-src="<%= thumbnail_url('/assets/images/work/valli.jpg', :sm_1c) %>"></span>
     <span data-src="<%= thumbnail_url('/assets/images/work/valli.jpg', :sm_1c_2x) %>"  data-media="(min-device-pixel-ratio: 2.0), (-webkit-min-device-pixel-ratio: 2.0)"></span>
@@ -81,9 +81,9 @@
   <div class="tile-content">
     <h3 class="tile-label-sw label-caption label-reversed">Valli, CEO</h3>
   </div>
-</a>
+<% end %>
 
-<a href="#" class="tile-col-1 tile-offset-2 tile-ratio-1-1 tile-tinted">
+<% link_to '/people/#aen', class: 'tile-col-1 tile-offset-2 tile-ratio-1-1 tile-tinted' do %>
   <span data-picture data-alt="Aen">
     <span data-src="<%= thumbnail_url('/assets/images/work/aen.jpg', :sm_1c) %>"></span>
     <span data-src="<%= thumbnail_url('/assets/images/work/aen.jpg', :sm_1c_2x) %>"  data-media="(min-device-pixel-ratio: 2.0), (-webkit-min-device-pixel-ratio: 2.0)"></span>
@@ -98,9 +98,9 @@
   <div class="tile-content">
     <h3 class="tile-label-sw label-caption label-reversed">Aen, Design Lead</h3>
   </div>
-</a>
+<% end %>
 
-<a href="#" class="tile-col-1 tile-offset-1 tile-ratio-1-1 clear-tile tile-tinted">
+<% link_to '/people/#wee-soon', class: 'tile-col-1 tile-offset-1 tile-ratio-1-1 clear-tile tile-tinted' do %>
   <span data-picture data-alt="Wee Soon">
     <span data-src="<%= thumbnail_url('/assets/images/work/weesoon.jpg', :sm_1c) %>"></span>
     <span data-src="<%= thumbnail_url('/assets/images/work/weesoon.jpg', :sm_1c_2x) %>"  data-media="(min-device-pixel-ratio: 2.0), (-webkit-min-device-pixel-ratio: 2.0)"></span>
@@ -115,7 +115,7 @@
   <div class="tile-content">
     <h3 class="tile-label-sw label-caption label-reversed">Wee Soon, Chief Technologist</h3>
   </div>
-</a>
+<% end %>
 
 <% link_to '/work/walk-for-water/', class: 'tile-col-2 tile-offset-3 tile-ratio-2-2 clear-tile' do %>
   <span data-picture data-alt="Walk for Water">
