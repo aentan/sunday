@@ -117,6 +117,26 @@ body {
         }
       }
     }
+    #contact {
+      @include transition(top .3s .3s ease);
+      position: absolute;
+      width: 100%;
+      height: 144px;
+      padding: 24px;
+      font-size: $font-size-xs;
+      line-height: 1.25;
+      background-color: $navbar-default-bg;
+      address {
+        margin: 0;
+      }
+      @media (min-width: $screen-md-min) {
+        position: absolute;
+        bottom: 0;
+        p {
+          text-align: justify;
+        }
+      }
+    }
   }
   #main {
     float: left;
@@ -141,19 +161,22 @@ $sections: work services people and-sunday lab contact;
   }
 }
 
-
-.menu-toggle {
+.menu-toggle,
+.contact-toggle {
   @extend .text-hide;
   padding: 18px 16px;
   position: absolute;
   z-index: $zindex-navbar;
-  left: 0;
   top: 0;
   width: 48px;
   height: 48px;
   @media (min-width: $screen-md-min) {
     display: none;
   }
+}
+
+.menu-toggle {
+  left: 0;
   > .icon-bar {
     border-radius: 1px;
     display: block;
@@ -171,6 +194,12 @@ $sections: work services people and-sunday lab contact;
       top: 27px;
     }
   }
+}
+
+.contact-toggle {
+  right: 0;
+  background: url('../images/icons/contact_toggle.svg') no-repeat 50% 50%;
+  background-size: 50% 50%;
 }
 
 .menu-open {
@@ -192,6 +221,12 @@ $sections: work services people and-sunday lab contact;
       }
     }
     
+  }
+}
+
+.contact-open {
+  #contact {
+    top: -144px;
   }
 }
 
@@ -435,12 +470,6 @@ $sections: work services people and-sunday lab contact;
 
 // Generate bg shades
 
-//@for $index from 1 through 10 {
-//  .tile-shaded:nth-child(#{$index}n-#{$index}) {
-//    @include random-persian-blue-shade();
-//  }
-//}
-
 .tile-shaded {
   background-color: $brand-primary;
   &:nth-child(odd) {
@@ -511,19 +540,6 @@ $sections: work services people and-sunday lab contact;
 
 
 // Tile widths + offsets
-
-//@media (min-width: $screen-sm-min) {
-//  @for $index from 1 through 4 {
-//    .tile-col-#{$index} {
-//      width: $index * 50%;
-//    }
-//  }
-//  @for $index from 0 through 3 {
-//    .tile-offset-#{$index} {
-//      margin-right: (3 - $index) * 50%;
-//    }
-//  }
-//}
 
 @media (min-width: $screen-md-min) {
   @for $index from 1 through 4 {

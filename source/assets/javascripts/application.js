@@ -4,7 +4,11 @@
 $(document).ready(function() {
   
   $('.menu-toggle').click(function() {
-    $('body').toggleClass('menu-open');
-  })
+    $('body').removeClass('contact-open').toggleClass('menu-open');
+  });
+  
+  $('.contact-toggle').click(function() {
+    $('body').removeClass('menu-open').toggleClass('contact-open');
+  });
   
 });
