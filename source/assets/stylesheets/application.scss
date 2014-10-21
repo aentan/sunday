@@ -73,12 +73,11 @@ body {
       float: left;
       width: 100%;
       position: absolute;
-      bottom: -60px;
+      bottom: 69px;
       font-family: $nav-font-family;
       font-weight: $nav-font-weight;
       background-color: $navbar-default-bg;
-      box-shadow: inset 0 -12px 0 0 lighten($brand-primary, 50%);
-      border-top: 1px solid lighten($brand-primary, 50%);
+//      border-top: 1px solid lighten($brand-primary, 50%);
       overflow: auto;
       -webkit-overflow-scrolling: touch;
       z-index: 0;
@@ -102,14 +101,17 @@ body {
         }
         li {
           display: inline-block;
-          min-width: 16.666%;
+          min-width: 24%;
+          @media (min-width: $screen-sm-min) {
+            min-width: 20%;
+          }
           @media (min-width: $screen-md-min) {
             display: block;
           }
           a {
             display: block;
             line-height: 1.6;
-            padding: 11px 12px 24px;
+            padding: 8px 12px 22px;
             font-weight: $nav-font-weight;
             text-align: center;
             @media (min-width: $screen-md-min) {
@@ -120,33 +122,26 @@ body {
       }
     }
     #contact {
-      @include transition(all .3s ease);
+      @include transition(bottom .3s .3s ease);
       position: absolute;
       width: 100%;
       height: auto;
-      min-height: 208px;
-      top: 48px;
-      bottom: 0;
+      bottom: 80px;
       font-size: $font-size-xs;
       font-family: $font-family-sans-serif;
       line-height: 1.25;
       background-color: $navbar-default-bg;
-      border-top: 1px solid lighten($brand-primary, 50%);
+//      border-top: 1px solid lighten($brand-primary, 50%);
       z-index: 0;
       @media (min-width: $screen-md-min) {
         border: 0;
         position: absolute;
-        top: auto;
         bottom: 78px;
         height: auto;
-        min-height: 192px;
         box-shadow: none;
         p {
           text-align: justify;
         }
-      }
-      @media (min-width: $screen-lg-min) {
-        min-height: 176px;
       }
       p {
         padding: 24px;
@@ -157,11 +152,7 @@ body {
         border-bottom: 1px solid lighten($brand-primary, 50%);
         width: 100%;
         height: 47px;
-        margin: -1px 0 0;
         padding: 0;
-        position: absolute;
-        bottom: 80px;
-        left: 0;
         @media (min-width: $screen-md-min) {
           bottom: 0;
         }
@@ -169,7 +160,6 @@ body {
           float: left;
           text-align: center;
           border-left: 1px solid lighten($brand-primary, 50%);
-          border-top: 1px solid lighten($brand-primary, 50%);
           &:first-child {
             border-left: 0;
           }
@@ -266,13 +256,17 @@ $sections: work services people and-sunday lab contact;
 
 .contact-toggle {
   right: 0;
-  background: url('../images/icons/contact_phone.svg') no-repeat 50% 50%;
+  background: url('../images/icons/contact_contact.svg') no-repeat 50% 50%;
   background-size: 50% 50%;
 }
 
 .menu-open {
   > aside nav {
     bottom: 117px;
+    box-shadow: inset 0 -12px 0 0 lighten($brand-primary, 50%);
+    @media (min-width: $screen-md-min) {
+      box-shadow: none;
+    }
   }
   .menu-toggle {
     > .icon-bar {
@@ -294,15 +288,11 @@ $sections: work services people and-sunday lab contact;
 
 .contact-open {
   #contact {
-    top: -154px;
-    bottom: 49px;
+    bottom: 128px;
     @media (min-width: $screen-sm-min) {
-      top: -128px;
-      
     }
     @media (min-width: $screen-md-min) {
-      top: auto;
-      bottom: 79px;
+      bottom: 78px;
     }
   }
 }
